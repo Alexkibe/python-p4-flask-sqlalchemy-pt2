@@ -3,7 +3,7 @@
 from flask import Flask
 from flask_migrate import Migrate
 
-from models import db
+from models import db, Owner, Pet
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
@@ -63,6 +63,7 @@ def owner_by_id(id):
     response = make_response(response_body, 200)
 
     return response
+
 
 
 if __name__ == '__main__':
